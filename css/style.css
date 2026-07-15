@@ -14,6 +14,8 @@
     /* Espacements */
     --radius: 12px;
     --transition: 0.3s ease;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+    --nav-shadow: none;
 }
 /*DARK MODE - via [data-theme="dark"]*/
 [data-theme="dark"]{
@@ -24,6 +26,8 @@
     --card-bg: #1e1e1e;
     --border: #333;
     --shadow: 0 8px 24px rgba(255, 255, 255, 0.05);
+    --nav-bg: rgba(18, 18, 18, 0.95);
+    --nav-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 /*RESET & BASE*/
 *{
@@ -36,6 +40,7 @@ body {
     background: var(--bg);
     color: var(--text);
     transition: background var(--transition), color var(--transition);
+    padding-top: 70px;
 }
 h1, h2, h3{
     font-family: var(--font-title);
@@ -47,8 +52,14 @@ h1, h2, h3{
     width: 100%;
     z-index: 1000;
     padding: 1rem 2rem;
-    background: transparent;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
     transition: background var(--transition), box-shadow var(--transition);
+    border-bottom: 1px solid transparent;
+}
+#navbar.scrolled{
+    box-shadow: var(--nav-shadow);
+    border-bottom: 1px solid rgba(128, 128, 128, 0.1);
 }
 .nav-container{
     display: flex;
@@ -122,7 +133,7 @@ h1, h2, h3{
     color: var(--secondary);
 }
 /*INNER HERO*/
-.inner-hero {
+.inner-hero{
     padding: 8rem 2rem 4rem;
     text-align: center;
     background: var(--primary);
@@ -170,20 +181,57 @@ footer{
 }
 /* RESPONSIVE */
 @media (max-width: 768px){
-    .nav-links {
+    .hamburger{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav-links{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        flex-direction: column;
+        padding: 20px;
+        gap: 15px;
         display: none;
+        border-top: 1px solid rgba(128, 128, 128, 0.1);
+        backdrop-filter: blur(10px);
     }
-    .hamburger {
-        display: block;
+
+    .nav-links.active{
+        display: flex;
     }
-    .hero-content h1 {
+
+    .nav-links a{
+        font-size: 1.1rem;
+        padding: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-content h1{
         font-size: 2.5rem;
     }
-    .footer-container {
+
+    .footer-container{
         flex-direction: column;
         text-align: center;
     }
+
     .socials{
         justify-content: center;
+    }
+}
+/* petit ecran */
+@media (max-width: 375px){
+    .logo{
+        font-size: 1.2rem;
+    }
+    
+    #navbar{
+        padding: 12px 15px;
     }
 }

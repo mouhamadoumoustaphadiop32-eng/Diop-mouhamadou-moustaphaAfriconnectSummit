@@ -30,3 +30,42 @@ themeToggle.addEventListener('click', function() {
         this.innerHTML = '<i class="bi bi-moon"></i>';
     }
 });
+/*COMITÉ #2 - NAVBAR DYNAMIQUE*/
+
+// 1. Récupérer la navbar
+const navbar = document.getElementById('navbar');
+
+// 2. Changement de fond et d'ombre après 80px de défilement
+window.addEventListener('scroll', function() {
+    if (window.scrollY > 80) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// 3. Menu hamburger (ouverture/fermeture au clic)
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+hamburger.addEventListener('click', function() {
+    // Basculer la classe active
+    navLinks.classList.toggle('active');
+    
+    // Changer l'icône (hamburger ↔ croix)
+    const icon = this.querySelector('i');
+    if (navLinks.classList.contains('active')) {
+        icon.className = 'bi bi-x-lg';
+    } else {
+        icon.className = 'bi bi-list';
+    }
+});
+
+// 4. Fermer le menu au clic sur un lien (sur mobile)
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', function() {
+        navLinks.classList.remove('active');
+        const icon = hamburger.querySelector('i');
+        icon.className = 'bi bi-list';
+    });
+});
