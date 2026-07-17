@@ -15,7 +15,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
     <!-- NAVBAR -->
     <header>
         <nav id="navbar">
@@ -45,6 +44,111 @@
             <div class="hero-content">
                 <h1>AfriConnect Summit 2026</h1>
                 <p>AfriConnect Summit 2026 · DAKAR, Sénégal · 22-24 Juillet</p>
+        <!-- COMPTE À REBOURS -->
+        <div id="countdown" class="countdown">
+            <div><span id="days">00</span><small>Jours</small></div>
+            <div><span id="hours">00</span><small>Heures</small></div>
+            <div><span id="minutes">00</span><small>Minutes</small></div>
+            <div><span id="seconds">00</span><small>Secondes</small></div>
+        </div>
+        <!-- BOUTONS CTA -->
+        <div class="hero-buttons">
+            <a href="contact.html" class="btn primary">S'inscrire</a>
+            <a href="programme.html" class="btn secondary">Voir le programme</a>
+        </div>
+</section>
+        <!--CHIFFRES CLÉS-->
+        <section class="stats-section fade-in">
+            <div class="container">
+                <h2>AfriConnect en chiffres</h2>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="1200">0</span>
+                        <p>Participants</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="48">0</span>
+                        <p>Intervenants</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <p>Jours</p>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="12">0</span>
+                        <p>Pays</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--POURQUOI PARTICIPER-->
+        <section class="why-section fade-in">
+            <div class="container">
+                <h2>Pourquoi participer ?</h2>
+                <div class="why-grid">
+                    <div class="why-card">
+                        <i class="bi bi-people"></i>
+                        <h3>Réseautage</h3>
+                        <p>Rencontrez les acteurs clés du tech africain.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="bi bi-lightbulb"></i>
+                        <h3>Innovation</h3>
+                        <p>Découvrez les dernières tendances et solutions.</p>
+                    </div>
+                    <div class="why-card">
+                        <i class="bi bi-rocket"></i>
+                        <h3>Impact</h3>
+                        <p>Contribuez à la transformation numérique du continent.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--INTERVENANTS VEDETTES-->
+        <section class="speakers-preview fade-in">
+            <div class="container">
+                <h2>Intervenants vedettes</h2>
+                <div class="speakers-grid">
+                    <div class="speaker-card">
+                        <img src="images/rcommercial.jpg" alt="Muhammad Diop">
+                        <h3>Muhammad Diop</h3>
+                        <p>IA & Data Science</p>
+                        <span>Cap-vert</span>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/dtechnique.jpg" alt="Mustafa Muhammad">
+                        <h3>Mustafa Muhammad</h3>
+                        <p>Fintech & Blockchain</p>
+                        <span>Senegal</span>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/cmanager1.jpg" alt="Muhammad Drame">
+                        <h3>Muhammad Drame</h3>
+                        <p>Design & UX</p>
+                        <span>Mauritanie</span>
+                    </div>
+                    <div class="speaker-card">
+                        <img src="images/ceo.jpg" alt="Mustafa Diop">
+                        <h3>Mustafa Diop</h3>
+                        <p>Entrepreneuriat</p>
+                        <span>Madagascar</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="intervenants.html" class="btn primary">Voir tous les intervenants</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SPONSORS ===== -->
+        <section class="sponsors-section fade-in">
+            <div class="container">
+                <h2>Nos sponsors</h2>
+                <div class="sponsors-flex">
+                    <div class="sponsor gold"><i class="bi bi-award"></i> Sonatel</div>
+                    <div class="sponsor silver"><i class="bi bi-award"></i> Orange</div>
+                    <div class="sponsor bronze"><i class="bi bi-award"></i> Free</div>
+                </div>
             </div>
         </section>
     </main>
@@ -70,6 +174,7 @@
         </div>
         <div class="footer-bottom">
             <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+            <button id="back-to-top" aria-label="Retour en haut"><i class="bi bi-arrow-up"></i></button>
         </div>
     </footer>
     <script src="js/main.js"></script>

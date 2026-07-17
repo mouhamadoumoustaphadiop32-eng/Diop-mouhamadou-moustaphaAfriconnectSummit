@@ -69,3 +69,41 @@ document.querySelectorAll('.nav-links a').forEach(link => {
         icon.className = 'bi bi-list';
     });
 });
+/*COMITÉ #3 - COMPTE À REBOURS*/
+// Date de la conférence : 24 Juillet 2026 à 16h00
+const targetDate=new Date('2026-07-24T16:30:00').getTime();
+function updateCountdown(){
+    const now = Date.now();
+    const diff = targetDate - now;
+    if (diff <= 0) {
+        document.getElementById('days').textContent='00';
+        document.getElementById('hours').textContent='00';
+        document.getElementById('minutes').textContent='00';
+        document.getElementById('seconds').textContent='00';
+        return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24))/(1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60))/(1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60))/1000);
+    document.getElementById('days').textContent=String(days).padStart(2, '0');
+    document.getElementById('hours').textContent=String(hours).padStart(2, '0');
+    document.getElementById('minutes').textContent=String(minutes).padStart(2, '0');
+    document.getElementById('seconds').textContent=String(seconds).padStart(2, '0');
+}
+// Mettre à jour le compte à rebours toutes les secondes
+setInterval(updateCountdown, 1000);
+updateCountdown();
+/*COMITÉ 3 - animations au scrool*/
+// Observer pour les animations fade-in
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.2 });
+// Observer tous les éléments avec la classe .fade-in
+document.querySelectorAll('.fade-in').forEach(el=>{
+    observer.observe(el);
+});
