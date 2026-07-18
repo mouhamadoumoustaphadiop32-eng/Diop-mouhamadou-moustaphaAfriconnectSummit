@@ -584,3 +584,164 @@ section h2 {
         font-size: 0.9rem;
     }
 }
+/*COMMIT 4 programme et theme*/
+/* SECTION PROGRAMME */
+.SectionProgramme{
+    padding: 80px 0;
+}
+.SectionProgramme h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+/* ONGLETS */
+.tabs{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+.tab-btn{
+    padding: 12px 35px;
+    border: 2px solid var(--secondary);
+    background: transparent;
+    color: var(--text);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 1rem;
+}
+.tab-btn:hover{
+    background: var(--secondary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+.tab-btn.active{
+    background: var(--secondary);
+    color: #fff;
+}
+/* TABLEAUX */
+.tab-content table{
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+.tab-content thead{
+    background: var(--primary);
+    color: #fff;
+}
+.tab-content th{
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+}
+.tab-content td{
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--border);
+}
+.tab-content tbody tr:hover{
+    background: rgba(240, 180, 41, 0.05);
+}
+.tab-content tbody tr:nth-child(even){
+    background: rgba(0, 0, 0, 0.02);
+}
+[data-theme="dark"] .tab-content tbody tr:nth-child(even){
+    background: rgba(255, 255, 255, 0.03);
+}
+/* SECTION THÉMATIQUES */
+.sectionthemes{
+    padding: 80px 0;
+    background: var(--bg);
+}
+.sectionthemes h2{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+/* GRILLE THÉMATIQUES */
+.gridthemes{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+/* CARTE THÉMATIQUE */
+.cartetheme{
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+}
+.cartetheme:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+.cartetheme i{
+    font-size: 3rem;
+    color: var(--secondary);
+    margin-bottom: 15px;
+    display: block;
+}
+.cartetheme h3{
+    margin-bottom: 10px;
+}
+.cartetheme p{
+    color: var(--text);
+    opacity: 0.8;
+}
+/* RESPONSIVE */
+@media (max-width: 768px){
+    .SectionProgramme {
+        padding: 50px 0;
+    }
+    .sectionthemes{
+        padding: 50px 0;
+    }
+    .SectionProgramme h2,
+    .sectionthemes h2{
+        font-size: 2rem;
+    }
+    .tabs{
+        gap: 10px;
+    }
+    .tab-btn{
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+    .gridthemes{
+        grid-template-columns: 1fr;
+    }
+    .tab-content table{
+        font-size: 0.85rem;
+    }
+    .tab-content th,
+    .tab-content td{
+        padding: 10px 12px;
+    }
+}
+@media (max-width: 375px){
+    .tab-btn{
+        padding: 8px 18px;
+        font-size: 0.8rem;
+        width: 100%;
+    }
+    .tab-content table{
+        font-size: 0.7rem;
+    }
+    .tab-content th,
+    .tab-content td{
+        padding: 8px 10px;
+    }
+    .cartetheme{
+        padding: 30px 20px;
+    }
+    .cartetheme i{
+        font-size: 2.5rem;
+    }
+}

@@ -34,7 +34,93 @@
         <section class="inner-hero">
             <div class="inner-hero-content">
                 <h1>Programme</h1>
-                <p><a href="index.html">Accueil</a> &gt; Intervenants</p>
+                <p><a href="index.html">Accueil</a> &gt; Programme</p>
+            </div>
+        </section>
+                <!--programme et onglet-->
+        <section class="SectionProgramme">
+            <div class="container">
+                <h2>Programme détaillé</h2>
+                <!-- onglets -->
+                <div class="tabs">
+                    <button class="tab-btn active" data-jour="1">Jour 1</button>
+                    <button class="tab-btn" data-jour="2">Jour 2</button>
+                    <button class="tab-btn" data-jour="3">Jour 3</button>
+                </div>
+                <!-- jour 1 -->
+                <div class="tab-content" id="jour1">
+                    <table>
+                        <thead>
+                            <tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>09:00 - 10:00</td><td>IA & Société</td><td>Muhammad Diop</td><td>Amphithéâtre</td></tr>
+                            <tr><td>10:15 - 11:15</td><td>Blockchain en Afrique</td><td>Mustafa Muhammad</td><td>Salle B</td></tr>
+                            <tr><td>11:30 - 12:30</td><td>Design Thinking</td><td>Muhammad Drame</td><td>Salle A</td></tr>
+                            <tr><td>14:00 - 15:00</td><td>Pitchs startups</td><td>Mustafa Diop</td><td>Amphithéâtre</td></tr>
+                            <tr><td>15:30 - 17:00</td><td>Table ronde : Futur de la Tech</td><td>Serigne Diop</td><td>Amphithéâtre</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- jour 2 -->
+                <div class="tab-content" id="jour2" style="display:none;">
+                    <table>
+                        <thead>
+                            <tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>09:00 - 10:00</td><td>Data & Analytics</td><td>Aminata Sow</td><td>Amphithéâtre</td></tr>
+                            <tr><td>10:15 - 11:15</td><td>Fintech inclusive</td><td>Gora Diop</td><td>Salle B</td></tr>
+                            <tr><td>11:30 - 12:30</td><td>UX/UI pour l'Afrique</td><td>Abib Diop</td><td>Salle A</td></tr>
+                            <tr><td>14:00 - 15:00</td><td>Énergie & Tech verte</td><td>Demba Diop</td><td>Amphithéâtre</td></tr>
+                            <tr><td>15:30 - 17:00</td><td>Atelier : IA éthique</td><td>Muhammad Diop</td><td>Salle B</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- jour 3 -->
+                <div class="tab-content" id="jour3" style="display:none;">
+                    <table>
+                        <thead>
+                            <tr><th>Heure</th><th>Session</th><th>Intervenant</th><th>Salle</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>09:00 - 10:00</td><td>Entrepreneuriat africain</td><td>Pierre Diouf</td><td>Amphithéâtre</td></tr>
+                            <tr><td>10:15 - 11:15</td><td>Cyber sécurité</td><td>Mustafa Gueye</td><td>Salle A</td></tr>
+                            <tr><td>11:30 - 12:30</td><td>EdTech & Formation</td><td>Bamba Diop</td><td>Salle B</td></tr>
+                            <tr><td>14:00 - 15:00</td><td>Investir en Afrique</td><td>Fallou Fall</td><td>Amphithéâtre</td></tr>
+                            <tr><td>15:30 - 17:00</td><td>Clôture & Remerciements</td><td>Les organisateurs</td><td>Amphithéâtre</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!--theme-->
+        <section class="sectionthemes">
+            <div class="container">
+                <h2>Thématiques</h2>
+                <div class="gridthemes">
+                    <div class="cartetheme">
+                        <i class="bi bi-cpu"></i>
+                        <h3>IA & Tech</h3>
+                        <p>Innovations en intelligence artificielle.</p>
+                    </div>
+                    <div class="cartetheme">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>Business</h3>
+                        <p>Modèles économiques innovants.</p>
+                    </div>
+                    <div class="cartetheme">
+                        <i class="bi bi-palette"></i>
+                        <h3>Design</h3>
+                        <p>Expérience utilisateur et créativité.</p>
+                    </div>
+                    <div class="cartetheme">
+                        <i class="bi bi-bar-chart"></i>
+                        <h3>Data</h3>
+                        <p>Analyses et stratégies data-driven.</p>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

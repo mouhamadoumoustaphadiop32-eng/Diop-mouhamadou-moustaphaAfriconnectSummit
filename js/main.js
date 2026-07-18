@@ -70,8 +70,13 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 /*COMITÉ #3 - COMPTE À REBOURS*/
-// Date de la conférence : 24 Juillet 2026 à 16h00
-const targetDate=new Date('2026-07-24T16:30:00').getTime();
+// Date de la conférence : 24 Juillet 2026 à 09h00
+const joursElement = document.getElementById('days');
+const heuresElement = document.getElementById('hours');
+const minutesElement = document.getElementById('minutes');
+const secondesElement = document.getElementById('seconds');
+if (joursElement && heuresElement && minutesElement && secondesElement) {
+const targetDate=new Date('2026-07-24T09:00:00').getTime();
 function updateCountdown(){
     const now = Date.now();
     const diff = targetDate - now;
@@ -94,6 +99,7 @@ function updateCountdown(){
 // Mettre à jour le compte à rebours toutes les secondes
 setInterval(updateCountdown, 1000);
 updateCountdown();
+}
 /*COMITÉ 3 - animations au scrool*/
 // Observer pour les animations fade-in
 const observer = new IntersectionObserver((entries)=>{
@@ -106,4 +112,20 @@ const observer = new IntersectionObserver((entries)=>{
 // Observer tous les éléments avec la classe .fade-in
 document.querySelectorAll('.fade-in').forEach(el=>{
     observer.observe(el);
+});
+/*COMITÉ5*/
+const boutonsOnglets = document.querySelectorAll('.tab-btn');
+const contenusOnglets = document.querySelectorAll('.tab-content');
+boutonsOnglets.forEach(bouton => {
+    bouton.addEventListener('click', function() {
+        // 1. Enlever la classe active de tous les boutons
+        boutonsOnglets.forEach(b => b.classList.remove('active'));
+        // 2. Ajouter la classe active au bouton cliqué
+        this.classList.add('active');
+        // 3. Cacher tous les contenus (tableaux)
+        contenusOnglets.forEach(c => c.style.display = 'none');
+        // 4. Afficher le contenu correspondant au jour cliqué
+        const jour = this.dataset.jour;
+        document.getElementById('jour' + jour).style.display = 'block';
+    });
 });
