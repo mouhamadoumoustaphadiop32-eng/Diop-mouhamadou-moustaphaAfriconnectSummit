@@ -872,3 +872,289 @@ section h2 {
         font-size: 0.9rem;
     }
 }
+/* ======================================================
+   COMMIT #6 - CONTACT, FORMULAIRE, FAQ, MAPS
+   ====================================================== */
+
+/* SECTION CONTACT */
+.sectioncontact {
+    padding: 60px 0 80px;
+}
+
+.contactflex {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.contactformulaire {
+    flex: 2;
+}
+
+.contactformulaire h2 {
+    text-align: left;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.contactformulaire > p {
+    margin-bottom: 30px;
+    opacity: 0.7;
+}
+
+.contactinfos {
+    flex: 1;
+    background: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.contactinfos h2 {
+    text-align: left;
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+.info-item,
+.infoitem {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+    align-items: flex-start;
+}
+
+.info-item i,
+.infoitem i {
+    font-size: 1.8rem;
+    color: var(--secondary);
+    margin-top: 5px;
+}
+
+.info-item h4,
+.infoitem h4 {
+    margin-bottom: 5px;
+}
+
+.info-item p,
+.infoitem p {
+    opacity: 0.7;
+}
+
+/* FORMULAIRE */
+.groupechamp {
+    margin-bottom: 20px;
+}
+
+.groupechamp label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.groupechamp input,
+.groupechamp select,
+.groupechamp textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    transition: border-color var(--transition);
+}
+
+.groupechamp input:focus,
+.groupechamp select:focus,
+.groupechamp textarea:focus {
+    outline: none;
+    border-color: var(--secondary);
+}
+
+.groupechamp input.erreur,
+.groupechamp select.erreur,
+.groupechamp textarea.erreur {
+    border-color: #e74c3c;
+}
+
+.groupechamp input.valide,
+.groupechamp select.valide,
+.groupechamp textarea.valide {
+    border-color: #27ae60;
+}
+
+.erreur {
+    color: #e74c3c;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 5px;
+}
+
+/* SUCCÈS */
+#succesmessage {
+    background: #27ae60;
+    color: #fff;
+    padding: 20px;
+    border-radius: var(--radius);
+    text-align: center;
+    margin-top: 20px;
+}
+
+#succesmessage i {
+    font-size: 2rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* ===== FAQ ACCORDÉON ===== */
+.sectionfaq {
+    padding: 60px 0 80px;
+    background: var(--bg);
+}
+
+.sectionfaq h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+}
+
+.accordion {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.accordion input {
+    display: none;
+}
+
+.accordion label {
+    display: block;
+    padding: 18px 25px;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    margin-bottom: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    border: 2px solid var(--border);
+    position: relative;
+}
+
+.accordion label:hover {
+    border-color: var(--secondary);
+}
+
+.accordion label::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    transition: transform var(--transition);
+}
+
+.accordion input:checked + label::after {
+    content: '−';
+}
+
+.accordion .reponse {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    padding: 0 25px;
+    background: var(--card-bg);
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.accordion input:checked + label + .reponse {
+    max-height: 300px;
+    padding: 15px 25px 25px;
+    border: 2px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.accordion .reponse p {
+    opacity: 0.8;
+}
+
+/* ===== CARTE GOOGLE MAPS ===== */
+.section-carte {
+    padding: 60px 0 80px;
+}
+
+.section-carte h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+.carte-container {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.carte-container iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .contactflex {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .contactformulaire h2,
+    .contactinfos h2 {
+        text-align: center;
+    }
+
+    .info-item,
+    .infoitem {
+        justify-content: center;
+    }
+
+    .accordion label {
+        font-size: 0.95rem;
+        padding: 15px 20px;
+    }
+
+    .carte-container iframe {
+        height: 300px;
+    }
+
+    .sectioncontact,
+    .sectionfaq,
+    .section-carte {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 375px) {
+    .contactinfos {
+        padding: 25px 20px;
+    }
+
+    .info-item,
+    .infoitem {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .accordion label {
+        font-size: 0.85rem;
+        padding: 12px 15px;
+    }
+
+    .carte-container iframe {
+        height: 200px;
+    }
+}

@@ -37,6 +37,180 @@
                 <p><a href="index.html">Accueil</a> &gt; Contact</p>
             </div>
         </section>
+                <!--formulaire contact-->
+        <section class="sectioncontact">
+            <div class="conteneur">
+                <div class="contactflex">
+                    <!-- formulaire -->
+                    <div class="contactformulaire">
+                        <h2>Inscription</h2>
+                        <p>Remplissez le formulaire pour vous inscrire au sommet.</p>
+                        
+                        <form id="formulaireInscription">
+                            <div class="groupechamp">
+                                <label for="nom">Nom complet *</label>
+                                <input type="text" id="nom" placeholder="Votre nom complet" required>
+                                <span class="erreur" id="erreur-nom"></span>
+                            </div>
+                            <div class="groupechamp">
+                                <label for="nom">prenom complet *</label>
+                                <input type="text" id="prenom" placeholder="Votre prenom complet" required>
+                                <span class="erreur" id="erreur-prenom"></span>
+                            </div>
+                            
+                            <div class="groupechamp">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" placeholder="exemple@email.com" required>
+                                <span class="erreur" id="erreur-email"></span>
+                            </div>
+                            
+                            <div class="groupechamp">
+                                <label for="telephone">Téléphone *</label>
+                                <input type="tel" id="telephone" placeholder="77 150 34 91" required>
+                                <span class="erreur" id="erreur-telephone"></span>
+                            </div>
+                            
+                            <div class="groupechamp">
+                                <label for="type">Type de participation *</label>
+                                <select id="type" required>
+                                    <option value="">Choisissez...</option>
+                                    <option value="visiteur">Visiteur</option>
+                                    <option value="exposant">Exposant</option>
+                                    <option value="intervenant">Intervenant</option>
+                                    <option value="presse">Presse</option>
+                                </select>
+                                <span class="erreur" id="erreur-type"></span>
+                            </div>
+                            
+                            <div class="groupechamp">
+                                <label for="pays">Pays *</label>
+                                <select id="pays" required>
+                                    <option value="">Choisissez votre pays...</option>
+                                    <option value="senegal">Sénégal</option>
+                                    <option value="cote-ivoire">Côte d'Ivoire</option>
+                                    <option value="nigeria">Nigeria</option>
+                                    <option value="ghana">Ghana</option>
+                                    <option value="cap-vert">Cap-vert</option>
+                                    <option value="comores">Comores</option>
+                                    <option value="algerie">Algérie</option>
+                                    <option value="egypte">Égypte</option>
+                                    <option value="kenya">Kenya</option>
+                                    <option value="gambie">Gambie</option>
+                                    <option value="benin">Bénin</option>
+                                    <option value="cameroun">Cameroun</option>
+                                    <option value="mali">Mali</option>
+                                </select>
+                                <span class="erreur" id="erreur-pays"></span>
+                            </div>
+                            
+                            <div class="groupechamp">
+                                <label for="message">Dites-nous pourquoi vous voulez participer *</label>
+                                <textarea id="message" rows="5" placeholder="Dites-nous pourquoi vous voulez participer..." required></textarea>
+                                <span class="erreur" id="erreur-message"></span>
+                            </div>
+                            
+                            <button type="submit" class="btn primary">S'inscrire</button>
+                            
+                            <div id="succesmessage" style="display:none;">
+                                <i class="bi bi-check-circle"></i>
+                                <p>✅ Inscription réussie ! Nous vous contacterons bientôt.</p>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!--Informations-->
+                    <div class="contactinfos">
+                        <h2>Informations</h2>
+                        
+                        <div class="info-item">
+                            <i class="bi bi-geo-alt"></i>
+                            <div>
+                                <h4>Adresse</h4>
+                                <p>Dakar, Sénégal<br>Centre international de conférences Abdou Diouf (CICAD)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="bi bi-calendar-event"></i>
+                            <div>
+                                <h4>Dates</h4>
+                                <p>23 - 25 Juillet 2026</p>
+                            </div>
+                        </div>
+                        
+                        <div class="infoitem">
+                            <i class="bi bi-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>team@africonnect.sn</p>
+                            </div>
+                        </div>
+                        
+                        <div class="infoitem">
+                            <i class="bi bi-telephone"></i>
+                            <div>
+                                <h4>Téléphone</h4>
+                                <p>+221 77 150 34 91</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--foire aux questions-->
+        <section class="sectionfaq">
+            <div class="conteneur">
+                <h2>Foire aux questions</h2>
+                
+                <div class="accordion">
+                    <input type="checkbox" id="question1">
+                    <label for="question1">Qui peut participer ?</label>
+                    <div class="reponse">
+                        <p>Le sommet est ouvert à tous : développeurs, entrepreneurs, investisseurs, étudiants et passionnés de technologie.</p>
+                    </div>
+                    
+                    <input type="checkbox" id="question2">
+                    <label for="question2">Y a-t-il des frais d'inscription ?</label>
+                    <div class="reponse">
+                        <p>Oui, les tarifs varient selon le type de participation. Contactez-nous pour plus d'informations.</p>
+                    </div>
+                    
+                    <input type="checkbox" id="question3">
+                    <label for="question3">Les sessions seront-elles en français ?</label>
+                    <div class="reponse">
+                        <p>Oui, toutes les sessions seront en français avec traduction simultanée en anglais sur demande.</p>
+                    </div>
+                    
+                    <input type="checkbox" id="question4">
+                    <label for="question4">Puis-je présenter un projet ?</label>
+                    <div class="reponse">
+                        <p>Oui, un appel à projets est ouvert. Soumettez votre dossier avant le 1er Juillet 2026.</p>
+                    </div>
+                    
+                    <input type="checkbox" id="question5">
+                    <label for="question5">Où se déroule l'événement ?</label>
+                    <div class="reponse">
+                        <p>L'événement se tient au Centre international de conférences Abdou Diouf (CICAD) de Diamniadio, Dakar, Sénégal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--google maps-->
+        <section class="section-carte">
+            <div class="conteneur">
+                <h2>Où nous trouver</h2>
+                <div class="carte-container">
+                    <iframe 
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3858.7263487240936!2d-17.1972678!3d14.7413174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1f5da325bb819eea!2sCentre%20International%20de%20Conf%C3%A9rence%20Abdou%20Diouf!5e0!3m2!1sfr!2sfr!4v1700000000000" 
+    allowfullscreen="" 
+    loading="lazy" 
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="footer-container">

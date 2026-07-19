@@ -150,3 +150,132 @@ boutonsFiltres.forEach(bouton =>{
         });
     });
 });
+/* ======================================================
+   COMMIT #6 - VALIDATION DU FORMULAIRE (Comité #7)
+   ====================================================== */
+
+const formulaire = document.getElementById('formulaireInscription');
+
+// Vérifier si le formulaire existe sur la page
+if (formulaire) {
+    formulaire.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let formulaireValide = true;
+
+        // 1. NOM
+        const nom = document.getElementById('nom');
+        const erreurNom = document.getElementById('erreur-nom');
+        if (nom.value.trim().length < 2) {
+            nom.classList.add('erreur');
+            nom.classList.remove('valide');
+            erreurNom.textContent = '⚠️ Le nom doit contenir au moins 2 caractères.';
+            formulaireValide = false;
+        } else {
+            nom.classList.remove('erreur');
+            nom.classList.add('valide');
+            erreurNom.textContent = '';
+        }
+
+        // 2. EMAIL
+        const email = document.getElementById('email');
+        const erreurEmail = document.getElementById('erreur-email');
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email.value.trim())) {
+            email.classList.add('erreur');
+            email.classList.remove('valide');
+            erreurEmail.textContent = '⚠️ Veuillez entrer un email valide.';
+            formulaireValide = false;
+        } else {
+            email.classList.remove('erreur');
+            email.classList.add('valide');
+            erreurEmail.textContent = '';
+        }
+
+        // 3. TÉLÉPHONE
+        const telephone = document.getElementById('telephone');
+        const erreurTelephone = document.getElementById('erreur-telephone');
+        const chiffres = telephone.value.replace(/\D/g, '');
+        if (chiffres.length < 8) {
+            telephone.classList.add('erreur');
+            telephone.classList.remove('valide');
+            erreurTelephone.textContent = '⚠️ Le téléphone doit contenir au moins 8 chiffres.';
+            formulaireValide = false;
+        } else {
+            telephone.classList.remove('erreur');
+            telephone.classList.add('valide');
+            erreurTelephone.textContent = '';
+        }
+
+        // 4. TYPE
+        const type = document.getElementById('type');
+        const erreurType = document.getElementById('erreur-type');
+        if (type.value === '') {
+            type.classList.add('erreur');
+            type.classList.remove('valide');
+            erreurType.textContent = '⚠️ Veuillez sélectionner un type de participation.';
+            formulaireValide = false;
+        } else {
+            type.classList.remove('erreur');
+            type.classList.add('valide');
+            erreurType.textContent = '';
+        }
+
+        // 5. PAYS
+        const pays = document.getElementById('pays');
+        const erreurPays = document.getElementById('erreur-pays');
+        if (pays.value === '') {
+            pays.classList.add('erreur');
+            pays.classList.remove('valide');
+            erreurPays.textContent = '⚠️ Veuillez sélectionner votre pays.';
+            formulaireValide = false;
+        } else {
+            pays.classList.remove('erreur');
+            pays.classList.add('valide');
+            erreurPays.textContent = '';
+        }
+
+        // 6. MESSAGE
+        const message = document.getElementById('message');
+        const erreurMessage = document.getElementById('erreur-message');
+        if (message.value.trim().length < 20) {
+            message.classList.add('erreur');
+            message.classList.remove('valide');
+            erreurMessage.textContent = '⚠️ Le message doit contenir au moins 20 caractères.';
+            formulaireValide = false;
+        } else {
+            message.classList.remove('erreur');
+            message.classList.add('valide');
+            erreurMessage.textContent = '';
+        }
+
+        // 7. AFFICHER LE MESSAGE DE SUCCÈS
+        const succesMessage = document.getElementById('succesmessage');
+        if (formulaireValide) {
+            succesMessage.style.display = 'block';
+            formulaire.reset();
+            document.querySelectorAll('.valide').forEach(el => el.classList.remove('valide'));
+            
+            setTimeout(() => {
+                succesMessage.style.display = 'none';
+            }, 5000);
+        } else {
+            succesMessage.style.display = 'none';
+            // Scroller vers le premier champ en erreur
+            const premierErreur = document.querySelector('.erreur');
+            if (premierErreur) {
+                premierErreur.focus();
+            }
+        }
+    });
+
+    // Réinitialiser les styles quand l'utilisateur modifie un champ
+    document.querySelectorAll('input, select, textarea').forEach(champ => {
+        champ.addEventListener('input', function() {
+            if (this.classList.contains('erreur')) {
+                this.classList.remove('erreur');
+                const erreurSpan = this.parentElement.querySelector('.erreur');
+                if (erreurSpan) erreurSpan.textContent = '';
+            }
+        });
+    });
+}
