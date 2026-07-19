@@ -70,17 +70,17 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     });
 });
 /*COMITÉ #3 - COMPTE À REBOURS*/
-// Date de la conférence : 24 Juillet 2026 à 09h00
+// Date de la conférence : 25 Juillet 2026 à 09h00
 const joursElement = document.getElementById('days');
 const heuresElement = document.getElementById('hours');
 const minutesElement = document.getElementById('minutes');
 const secondesElement = document.getElementById('seconds');
 if (joursElement && heuresElement && minutesElement && secondesElement) {
-const targetDate=new Date('2026-07-24T09:00:00').getTime();
+const targetDate=new Date('2026-07-25T09:00:00').getTime();
 function updateCountdown(){
     const now = Date.now();
     const diff = targetDate - now;
-    if (diff <= 0) {
+    if (diff <= 0){
         document.getElementById('days').textContent='00';
         document.getElementById('hours').textContent='00';
         document.getElementById('minutes').textContent='00';
@@ -127,5 +127,26 @@ boutonsOnglets.forEach(bouton => {
         // 4. Afficher le contenu correspondant au jour cliqué
         const jour = this.dataset.jour;
         document.getElementById('jour' + jour).style.display = 'block';
+    });
+});
+/* COMMIT 5 filtrage des intervnants*/
+const boutonsFiltres = document.querySelectorAll('.btn-filtre');
+const cartesIntervenants = document.querySelectorAll('.carteintervenant');
+boutonsFiltres.forEach(bouton =>{
+    bouton.addEventListener('click', function(){
+        // 1. Enlever la classe 'actif' de tous les boutons
+        boutonsFiltres.forEach(b => b.classList.remove('actif'));
+        // 2. Ajouter la classe 'actif' au bouton cliqué
+        this.classList.add('actif');
+        // 3. Récupérer le filtre sélectionné
+        const filtre = this.dataset.filtre;
+        // 4. Afficher ou masquer les cartes
+        cartesIntervenants.forEach(carte => {
+            if (filtre === 'tous' || carte.dataset.categorie === filtre) {
+                carte.style.display = 'block';
+            } else {
+                carte.style.display = 'none';
+            }
+        });
     });
 });

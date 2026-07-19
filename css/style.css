@@ -745,3 +745,130 @@ section h2 {
         font-size: 2.5rem;
     }
 }
+/* COMMIT5 filtre des intervenants*/
+
+/*section filtre*/
+.sectionfiltres{
+    padding: 40px 0 20px;
+}
+.filtres{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+.btn-filtre{
+    padding: 10px 30px;
+    border: 2px solid var(--secondary);
+    background: transparent;
+    color: var(--text);
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all var(--transition);
+    font-size: 0.95rem;
+}
+.btn-filtre:hover{
+    background: var(--secondary);
+    color: #fff;
+    transform: translateY(-3px);
+}
+.btn-filtre.actif{
+    background: var(--secondary);
+    color: #fff;
+}
+/*section des intervenant*/
+.sectionintervenants{
+    padding: 20px 0 80px;
+}
+.grilleintervenants{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+/* carte des intervants*/
+.carteintervenant{
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 25px 20px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all var(--transition);
+}
+.carteintervenant:hover{
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+.carteintervenant img{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+.carteintervenant h3{
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+.carteintervenant p{
+    color: var(--secondary);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+.carteintervenant span{
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+/*conteneur */
+.conteneur{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/*responsive*/
+/* Tablette */
+@media (max-width: 768px){
+    .grilleintervenants{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .filtres{
+        gap: 10px;
+    }
+    .btn-filtre{
+        padding: 8px 20px;
+        font-size: 0.85rem;
+    }
+    .carteintervenant img{
+        width: 120px;
+        height: 120px;
+    }
+}
+/* Mobile */
+@media (max-width: 375px){
+    .grilleintervenants {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .btn-filtre{
+        padding: 6px 15px;
+        font-size: 0.75rem;
+        width: 100%;
+        text-align: center;
+    }
+    .filtres{
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+    .carteintervenant img{
+        width: 100px;
+        height: 100px;
+    }
+    .carteintervenant h3{
+        font-size: 1rem;
+    }
+    .carteintervenant p{
+        font-size: 0.9rem;
+    }
+}
