@@ -113,6 +113,40 @@ const observer = new IntersectionObserver((entries)=>{
 document.querySelectorAll('.fade-in').forEach(el=>{
     observer.observe(el);
 });
+/* ======================================================
+   COMITÉ #4 - COMPTEURS ANIMÉS
+   ====================================================== */
+
+// Observer pour les compteurs
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const element = entry.target;
+            const target = parseInt(element.dataset.target);
+            animateCounter(element, target);
+            counterObserver.unobserve(element);
+        }
+    });
+}, { threshold: 0.3 });
+
+function animateCounter(element, target) {
+    let current = 0;
+    const increment = target / 60;
+    const timer = setInterval(() => {
+        current += increment;
+        if (current >= target) {
+            element.textContent = target;
+            clearInterval(timer);
+        } else {
+            element.textContent = Math.floor(current);
+        }
+    }, 25);
+}
+
+// Observer tous les éléments avec la classe .stat-number
+document.querySelectorAll('.stat-number').forEach(el => {
+    counterObserver.observe(el);
+});
 /*COMITÉ5*/
 const boutonsOnglets = document.querySelectorAll('.tab-btn');
 const contenusOnglets = document.querySelectorAll('.tab-content');
@@ -276,6 +310,23 @@ if (formulaire) {
                 const erreurSpan = this.parentElement.querySelector('.erreur');
                 if (erreurSpan) erreurSpan.textContent = '';
             }
+        });
+    });
+}
+/*commit 7 bouton retour en haut*/
+const retourHaut=document.getElementById('back-to-top');
+if(retourHaut){
+    window.addEventListener('scroll',function(){
+        if(window.scrollY > 300){
+            retourHaut.classList.add('visible');
+        }else{
+            retourHaut.classList.remove('visible');
+        }
+    });
+    retourHaut.addEventListener('click',function(){
+        window.scrollTo({
+            top: 0,
+            behavior:'smooth'
         });
     });
 }
