@@ -330,3 +330,8 @@ if(retourHaut){
         });
     });
 }
+/*commit 8*/
+const annee = document.getElementById('year');
+if (annee) {
+    annee.textContent = new Date().getFullYear();
+}
